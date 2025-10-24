@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Eventos — {{ bairro.nome }}{% endblock %}
+{% block content %}
+<div class="container py-4">
+<h1 class="mb-3">Eventos — {{ bairro.nome }}</h1>
+<div class="list-group">
+{% for e in eventos %}
+<div class="list-group-item">
+<div class="d-flex w-100 justify-content-between">
+<h5 class="mb-1">{{ e.titulo }}</h5>
+<small>{{ e.status }}</small>
+</div>
+<p class="mb-1">{{ e.descricao }}</p>
+<small>Início: {{ e.inicio_previsto }} | Fim: {{ e.fim_previsto }}</small>
+</div>
+{% empty %}
+<div class="alert alert-info">Nenhum evento para este bairro.</div>
+{% endfor %}
+</div>
+<a class="btn btn-link mt-3" href="{% url 'home' %}">Voltar</a>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Consulta de interrupções{% endblock %}
+{% block content %}
+<div class="container py-4">
+<h1 class="mb-3">Consulta de interrupções</h1>
+<p>Escolha seu bairro:</p>
+<ul class="list-group">
+{% for b in bairros %}
+<li class="list-group-item d-flex justify-content-between align-items-center">
+{{ b.nome }}
+<a class="btn btn-sm btn-primary" href="{% url 'eventos_por_bairro' b.id %}">Ver</a>
+</li>
+{% empty %}
+<li class="list-group-item">Nenhum bairro cadastrado.</li>
+{% endfor %}
+</ul>
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Assinatura registrada{% endblock %}
+{% block content %}
+<div class="container py-4">
+<div class="alert alert-success">
+<h4 class="alert-heading">Assinatura registrada!</h4>
+<p>Você receberá alertas para o seu bairro.</p>
+<hr>
+<a class="btn btn-primary" href="{% url 'home' %}">Voltar</a>
+</div>
+</div>
+{% endblock %}
